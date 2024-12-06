@@ -3,6 +3,7 @@ import re
 from urllib.parse import unquote
 
 from wikmd.config import WikmdConfig
+from wikmd.plugins.quick_links import quick_links
 
 cfg = WikmdConfig()
 
@@ -45,6 +46,8 @@ def find_links():
                 continue
             with open(os.path.join(root, item), encoding="utf8", errors='ignore') as f:
                 fin = f.read()
+                if 'quick_links' in cfg.plugins:
+                    fin = quick_links.process_md(fin)
                 print("--------------------")
                 print("filename: ", pagename)
                 try:
