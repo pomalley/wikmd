@@ -100,8 +100,11 @@ cython_debug/
 src/wikmd/plugins/draw/drawings/*
 !src/wikmd/plugins/draw/drawings/.gitkeep
 
+# emacs
+*~
 
 # Personal wiki pages
+wiki/
 wiki/*
 
 temp/*
